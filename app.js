@@ -25,9 +25,24 @@ app.use('/api/platforms', platformRoutes);
 app.use('/api/games', gameRoutes);
 app.use('/api/users', userRoutes);
 
+app.get('/', (req, res) => {
+  res.json({
+    message: "Bienvenido al API de Games",
+    endpoints: {
+      platforms: "/api/platforms",
+      games: "/api/games",
+      health: "/api/health"
+    }
+  });
+});
+
+app.get('/', (req, res) => {
+  res.send('¡Backend de Games funcionando!');
+});
+
 // Health check
-app.get('/api/health', (req, res) => {
-  res.json({ status: 'OK', message: 'API running without auth' });
+app.get('/', (req, res) => {
+  res.redirect('/api/health');
 });
 
 // Iniciar servidor
