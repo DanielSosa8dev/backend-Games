@@ -7,7 +7,6 @@ const platformRoutes = require('./routes/platformRoutes');
 const gameRoutes = require('./routes/gameRoutes');
 const userRoutes = require('./routes/userRoutes');
 
-
 const app = express();
 
 // Middlewares
